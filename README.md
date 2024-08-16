@@ -11,7 +11,14 @@
 
 > 本仓库为NKU-AI-Assistant项目的后端部分,是一个FastAPI项目，如果您需要在本地运行我们NKU-Smart-Assistant完整的项目，您需要先分别运行前端项目和后端项目，前端项目的运行方法在[NKU-Smart-Assistant](https://github.com/Wenjun-Ji/NKU-Smart-Assistant)中已经详细介绍了，在次介绍后端的本地运行方式
 
-1. 下载数据和模型文件
+1. 克隆仓库
+
+```bash
+git clone
+cd NKU-Smart-Assistant-API
+```
+
+2. 下载数据和模型文件
 请从[google网盘链接](https://drive.google.com/drive/folders/1yZ37BqKC0dqKKxjUXGctOtDeEhwSU9lr?usp=drive_link)下载files1_faiss_index文件夹和files_faiss_index文件夹，以及models，使项目结构与下面的一致
 ```
 nku-smart-assistant-api
@@ -49,25 +56,39 @@ nku-smart-assistant-api
 ├─ webscrap
 ```
 
-```bash
+3. 配置.env文件
 
+```bash
+# Neo4j Database 
+NEO4J_URI=""
+NEO4J_USERNAME=""
+NEO4J_PASSWORD=""
+
+# OpenAI
+OPENAI_API_KEY=""
+OPENAI_API_BASE=""
+
+# Tavily
+TAVILY_API_KEY=""
+
+# LangSmith 
+LANGCHAIN_TRACING_V2=true
+LANGCHAIN_ENDPOINT=""
+LANGCHAIN_API_KEY=""
+
+# GROQ
+GROQ_API_KEY=""
 ```
-2. 配置.env文件
-```bash
 
-```
-3. 安装依赖
+4. 配置python环境
 ```bash
-
+conda create -n nku-smart-assistant-api python==3.9.13
+pip install -r requirment.txt
 ```
 4. 运行server.py文件
 ```bash
-
+uvicorn server:app --host 0.0.0.0 --port 8000
 ```
-
-## Backend
-
-后端部分代码请参考另一仓库[NKU-Smart-Assitant-API](https://github.com/Wenjun-Ji/NKU-Smart-Assitant-API)
 
 
 
