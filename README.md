@@ -1,6 +1,6 @@
 # [NKU-AI-Assistant](https://www.chatnku.top)
 
-南开大学智能小助手是你的校园生活好帮手。无论是学业上的问题，还是生活中的琐事，小助手都能为你提供贴心的帮助，他就像是一位热心的学长或学姐。
+The NKU AI Assistant is your go-to helper for campus life at Nankai University. Whether you have academic questions or need assistance with daily tasks, the assistant is here to offer you considerate help, much like a friendly senior student.
 
 ![image](https://github.com/user-attachments/assets/22290420-9167-4a14-83e6-5517db24d673)
 ![image](https://github.com/user-attachments/assets/165ccf84-41ef-4288-811a-e340951254d7)
@@ -9,17 +9,18 @@
 
 ## Running Locally
 
-> 本仓库为NKU-AI-Assistant项目的后端部分,是一个FastAPI项目，如果您需要在本地运行我们NKU-Smart-Assistant完整的项目，您需要先分别运行前端项目和后端项目，前端项目的运行方法在[NKU-Smart-Assistant](https://github.com/Wenjun-Ji/NKU-Smart-Assistant)中已经详细介绍了，在次介绍后端的本地运行方式
+> This repository contains the backend part of the NKU-AI-Assistant project, a FastAPI project. If you need to run the complete NKU-Smart-Assistant project locally, you must run both the frontend and backend projects. The method for running the frontend project is detailed in [NKU-Smart-Assistant](https://github.com/Wenjun-Ji/NKU-Smart-Assistant). Below, we introduce how to run the backend locally.
 
-1. 克隆仓库
+1. Clone the repository
 
 ```bash
 git clone
 cd NKU-Smart-Assistant-API
 ```
 
-2. 下载数据和模型文件
-请从[google网盘链接](https://drive.google.com/drive/folders/1yZ37BqKC0dqKKxjUXGctOtDeEhwSU9lr?usp=drive_link)下载files1_faiss_index文件夹和files_faiss_index文件夹，以及models，使项目结构与下面的一致
+2. Download data and model files  
+Please download the `files1_faiss_index` folder, the `files_faiss_index` folder, and the models from the [Google Drive link](https://drive.google.com/drive/folders/1yZ37BqKC0dqKKxjUXGctOtDeEhwSU9lr?usp=drive_link). Ensure that the project structure matches the following:
+
 ```
 nku-smart-assistant-api
 ├─ .env
@@ -56,7 +57,7 @@ nku-smart-assistant-api
 ├─ webscrap
 ```
 
-3. 配置.env文件
+3. Configure the `.env` file
 
 ```bash
 # Neo4j Database 
@@ -80,15 +81,19 @@ LANGCHAIN_API_KEY=""
 GROQ_API_KEY=""
 ```
 
-4. 配置python环境
+4. Set up the Python environment
+
 ```bash
 conda create -n nku-smart-assistant-api python==3.9.13
-pip install -r requirment.txt
+pip install -r requirements.txt
 ```
-4. 运行server.py文件
+
+5. Run the `server.py` file
+
 ```bash
 uvicorn server:app --host 0.0.0.0 --port 8000
 ```
 
+> You can debug the FastAPI endpoints on the `/docs` port. Since I’ve already deployed the backend project to a cloud server, if you need to run it locally, make sure to modify the frontend by replacing the request URL in the `submitUserMessage` function in `lib/chat/action.ts`.
 
 
