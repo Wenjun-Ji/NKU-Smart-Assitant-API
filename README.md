@@ -7,78 +7,18 @@
 ![image](https://github.com/user-attachments/assets/d69ffb81-519d-4291-a193-040c5b6156a6)
 
 
-## Features
-
-- [LangChain](https://www.langchain.com/) The largest community building the future of LLM apps
-- [LangGraph](https://www.langchain.com/langgraph) Balance agent control with agency
-- [FastAPI](https://fastapi.tiangolo.com/) Building APIs
-- [Next.js](https://nextjs.org) App Router
-- React Server Components (RSCs), Suspense, and Server Actions
-- [Vercel AI SDK](https://sdk.vercel.ai/docs) for streaming chat UI
-- [shadcn/ui](https://ui.shadcn.com)
-  - Styling with [Tailwind CSS](https://tailwindcss.com)
-  - [Radix UI](https://radix-ui.com) for headless component primitives
-  - Icons from [Phosphor Icons](https://phosphoricons.com)
-- Chat History, rate limiting, and session storage with [Vercel KV](https://vercel.com/storage/kv)
-- [NextAuth.js](https://github.com/nextauthjs/next-auth) for authentication
-
 ## Running Locally
 
-> 本仓库为NKU-AI-Assistant项目的前端部分，如您想要使用我们的仓库为前端模板，您可以按照以下步骤在本地运行。
+> 本仓库为NKU-AI-Assistant项目的后端部分,是一个FastAPI项目，如果您需要在本地运行我们NKU-Smart-Assistant完整的项目，您需要先分别运行前端项目和后端项目，前端项目的运行方法在[NKU-Smart-Assistant](https://github.com/Wenjun-Ji/NKU-Smart-Assistant)中已经详细介绍了，在次介绍后端的本地运行方式
 
-1. Cloning the repository the local machine
-```bash
-git clone
-cd NKU-Smart-Assistant
+1. 下载数据和模型文件
+请从[google网盘链接](https://drive.google.com/drive/folders/1yZ37BqKC0dqKKxjUXGctOtDeEhwSU9lr?usp=drive_link)下载files1_faiss_index文件夹和files_faiss_index文件夹，以及models，使项目结构与下面的一致
 ```
-2. Installing the dependencies.
-```bash
-pnpm install
-```
-3. Running the application.
-```bash
-pnpm dev
-```
-
-> 如您也想使用FastAPI封装您自己的机器人，您可以替换 `lib/chat/action.ts`中submitUserMessage函数中请求的地址
-
-## Backend
-
-后端部分代码请参考另一仓库[NKU-Smart-Assitant-API](https://github.com/Wenjun-Ji/NKU-Smart-Assitant-API)
-
-## Powered by
-
-在此非常感谢[ai-chatbot](https://github.com/vercel/ai-chatbot)这个项目🥰🥰🥰，我们的前端是以该项目为基础的。
-
-
-
-```
-nku-smart-assistant-master
+nku-smart-assistant-api
 ├─ .env
 ├─ chat
-│  ├─ graphRAG.py
-│  ├─ langgraph_RAG.py
-│  ├─ retrieval_chain.py
-│  ├─ transform.py
-│  └─ __pycache__
-│     ├─ graphRAG.cpython-39.pyc
-│     ├─ langgraph_RAG.cpython-39.pyc
-│     ├─ retrieval_chain.cpython-39.pyc
-│     └─ transform.cpython-39.pyc
 ├─ edgedriver
-│  ├─ Driver_Notes
-│  │  ├─ credits.html
-│  │  ├─ EULA
-│  │  └─ LICENSE
-│  ├─ install-tl-windows.exe
-│  ├─ msedgedriver.exe
-│  └─ x86_64-8.1.0-release-win32-seh-rt_v6-rev0.7z
 ├─ file
-│  ├─ file_analyze.py
-│  ├─ transform.py
-│  └─ __pycache__
-│     ├─ file_analyze.cpython-39.pyc
-│     └─ transform.cpython-39.pyc
 ├─ files1_faiss_index
 │  ├─ index.faiss
 │  └─ index.pkl
@@ -101,29 +41,33 @@ nku-smart-assistant-master
 │     ├─ tokenizer_config.json
 │     └─ vocab.txt
 ├─ NewsGet
-│  ├─ news.py
-│  └─ __pycache__
-│     └─ news.cpython-39.pyc
 ├─ README.md
 ├─ requirements.txt
 ├─ server.py
 ├─ static
-│  ├─ Backpropagation_Theory,_Architectures,_and_Applications_(Yves_Chauvin_(ed.),_David_E._Rumelhart_(ed.))_(Z-Library).pdf
-│  ├─ eng.txt
-│  ├─ test.txt
-│  └─ translated_eng.txt
 ├─ videoinfo
-│  ├─ videoinfo_bilibili.py
-│  ├─ videoinfo_youtube.py
-│  └─ __pycache__
-│     └─ videoinfo_youtube.cpython-39.pyc
 ├─ webscrap
-│  ├─ webscrap_multilevel.py
-│  ├─ webscrap_single.py
-│  └─ __pycache__
-│     ├─ webscrap_single.cpython-311.pyc
-│     └─ webscrap_single.cpython-39.pyc
-└─ __pycache__
-   └─ server.cpython-39.pyc
+```
+
+```bash
 
 ```
+2. 配置.env文件
+```bash
+
+```
+3. 安装依赖
+```bash
+
+```
+4. 运行server.py文件
+```bash
+
+```
+
+## Backend
+
+后端部分代码请参考另一仓库[NKU-Smart-Assitant-API](https://github.com/Wenjun-Ji/NKU-Smart-Assitant-API)
+
+
+
